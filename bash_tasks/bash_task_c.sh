@@ -9,8 +9,8 @@
 
 
 DATE=$(date +%F-%H-%M)						#current date
-BACKUP_DIR=/home/katroo/Desktop/level1/bash_tasks/one			#source directory
-DEST=/home/katroo/Desktop/level1/bash_tasks/one_backup			#destination direcroty
+BACKUP_DIR=$1							#source directory
+DEST=$2								#destination direcroty
 
 BACKUP=$(rsync -av $BACKUP_DIR $DEST --delete | grep one) 	#backup with rsync command and grep only lines with word "one" - because it means changes was done
 DELETED_FILES="[^deleting one]"					#to choose only lines with files were deleted
